@@ -10,11 +10,11 @@ public class HighScore: MonoBehaviour
 
     void Awake()
     {
-       if (PlayerPrefs.HasKey("HighScore"))
+       if (PlayerPrefs.HasKey("HighScore: "))
         {
-            score = PlayerPrefs.GetInt("HighScore");
+            score = PlayerPrefs.GetInt("HighScore: ");
         }
-        PlayerPrefs.SetInt("HighScore", score);
+        PlayerPrefs.SetInt("HighScore: ", score);
 
     }
     // Start is called before the first frame update
@@ -27,11 +27,11 @@ public class HighScore: MonoBehaviour
     void Update()
     {
         Text gt = this.GetComponent<Text>();
-        gt.text = "High Score" + score; 
+        gt.text = "High Score: " + score; 
 
-        if (score > PlayerPrefs.GetInt("HighScore"))
+        if (score > PlayerPrefs.GetInt("HighScore: "))
         {
-            PlayerPrefs.SetInt("HighScore", score);
+            PlayerPrefs.SetInt("HighScore: ", score);
         }
     }
 }
